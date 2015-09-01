@@ -16,13 +16,96 @@
 			</section>
  
 			<section>
-				<h1>Asiaa</h1>
-				<ph2>..............</p>
+				<section>
+					<h1>HTTP</h1>
+					<h4>HyperText Transfer Protocol</h2>
+					<p>- HTTP on verkkoprotokolla, jota käyttävät selaimet ja www-palvelimet.</p>
+					<p>- HTTP hoitaa asiakkaan ja palvelimen välisen tiedonsiirron.</p>
+				</section>
+				<section>
+					<h1>Toiminta</h1>
+					<p>- Asiakashjelma lähettää pyynnön ja HTTP välittää sen TCP-yhteyttä käyttäen palvelimelle</p>
+					<p>- Palvelin vastaa pyyntöön lähettämällä yleensä HTML-sivun.</p>
+					<p>- Sisältää paljon lisäominaisuuksia kuten virheenhallintaa ja salausvaihtoehtoja</p>
+				</section>
+				<section>
+					<h1>HTTPS</h1>
+					<p>- HTTP:n "laajennos", yhdistää HTTP:n ja SSL/TLS:n </p>
+					<p>- Mahdollistaa tiedon suojatun siirron.</p>
+					<p>- HTTP:llä lähetetyt tiedot salataan käyttäen joko SSL- tai TLS-protokollaa.</p>
+				</section>
+				<section>
+					<h3>Yleisimmät HTTP-webpalvelimet</h3>
+					<p>- Apache</p>
+					<p>- IIS (Microsoft)</p>
+					<p>- Nginx</p>
+					<p>- GWS (Google Web Server)
+				</section>
 			</section>
  
 			<section>
-				<h1>Asiaa</h1>
-				<p>..............</p>
+				<section>
+					<h1>TCP</h1>
+					<h4>Transmission Control Protocol</h2>
+					<p>- Tietoliikenneprotokolla, jolla luodaan yhteyksiä käyttäjien välillä.</p>
+					<p>- Kattaa suurimman osan Internetin liikenteestä.</p>
+				</section>
+				<section>
+					<h1>Toiminta</h1>
+					<p>- Lähettää dataa luotettavasti.</p>
+					<p>- Huolehtii, että lähetetty data menee perille asti oikeassa järjestyksessä.</p>
+					<p>- Hävinneet datapaketit voidaan lähettää uudestaan.</p>
+				</section>
+				<section>
+					<h1>Käyttö</h1>
+					<p>- Useat protokollat ovat rakennettu TCP:n päälle.</p>
+					<p>- Mm. HTTP, SMTP, Telnet, SSH, FTP ja WebSocket</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>FTP</h1>
+					<h4>File Transfer Protocol</h2>
+					<p>- Tiedostonsiirron mahdollistava protokolla.</p>
+				</section>
+				<section>
+					<h1>Toiminta</h1>
+					<p>- Asiakas yhdistää FTP-palvelimeen, johon tiedostot on ladattu.</p>
+					<p>- Yksi palvelin palvelee useaa asiakasta.</p>
+					<p>- Muodostaa yhteyden käyttäen TCP-protokollaa.</p>
+					<p>- Käyttö onnistuu käyttäen selainta, komentoriviohjelmaa tai FTP:n käyttöön suunniteltua työpöytäohjelmaa.
+				</section>
+				<section>
+					<h1>Heikkoudet</h1>
+					<p>- Ei suunniteltu turvalliseksi protokollaksi.</p>
+					<p>- Tiedostot, salasanat ja käyttäjänimet lähetetään salaamattomina.</p>
+					<p>- Salattu yhteys vaatii laajennetun protokollan, joka mahdollistaa salauksen.</p>
+					<p>- Salauksen mahdollistavia protokollia mm. FTPS (TLS/SSL) ja SFTP (SSH)</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>SSH</h1>
+					<h4>Secure Shell</h2>
+					<p>- Mahdollistaa komentorivi-pohjaisen etäyhteyden toiseen tietokoneeseen.</p>
+					<p>- Muodostaa turvallisen yhteyden turvattoman verkon yli.</p>
+				</section>
+				<section>
+					<h1>Toiminta</h1>
+					<p>- Vaatii etäkäytettävään tietokoneeseen erillisen SSH-palvelimen.</p>
+					<p>- Yhdistäminen tapahtuu SSH-ohjelmalla</p>
+					<p>- Sisältää lukuisia eri salaus/tunnistus-vaihtoehtoja</p>
+					<p>- Käyttäjänimellä ja salasanalla yhdistämisen lisäksi tarjoaa avaimiin perustuvan salauksen, jossa kirjaudutaan avainparilla, joista toinen on palvelimella ja toinen käyttäjällä.</p>
+
+				</section>
+				<section>
+					<h1>Käyttö</h1>
+					<p>- Perinteisen komentorivipohjaisen etähallinnan lisäksi SSH:ta käytetään useisiin muihin tarkoituksiin</p>
+					<p>- Tunnelointi: Mahdollistaa palomuurien turvallisen läpäisemisen antaen mahdollisuuden käyttää esimerkiksi yksityisten verkkojen ominaisuuksia.</p>
+					<p>- Tarjoaa salatun yhteyden tiedostonsiirtoon, esim SFTP.</p>
+				</section>
 			</section>
  
 			</div>
