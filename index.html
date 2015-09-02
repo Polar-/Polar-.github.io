@@ -12,10 +12,12 @@
 		<div class="slides">
 			<section>
 				<h2>Verkkosovelluskehitys</h2>
-				<h2>Blogi</h2>		
+				<h2>Blogi</h2>
+				<a href="#/protocols">verkkoprotokollia</a>
+				<a href="#/ircbot">IRCBot/Openshift</a>
 			</section>
  
-			<section>
+			<section id="protocols">
 				<section>
 					<h1>HTTP</h1>
 					<h4>HyperText Transfer Protocol</h2>
@@ -108,6 +110,49 @@
 				</section>
 			</section>
  
+			<section id="ircbot">
+				<section>
+					<h3>IRC-botin asennus OpenShiftiin</h3>
+					<p>OpenShift: <a href="https://www.openshift.com/">www.openshift.com</a></p>
+					<p>Botin lähdekoodi: <a href="https://www.github.com/jvanhalen/irclokki">www.github.com/jvanhalen/irclokki</a></p>
+				</section>
+				<section style="text-align:left;">
+					<h3>Vaihe 1</h3>
+					<p>Luo irclokki-sovellus OpenShiftiin komentorivissä komennolla: </p>
+					<code>rhc app create irclokki nodejs-0.10 --from-code  https://github.com/jvanhalen/irclokki.git</code>
+				</section>
+				<section style="text-align:left;">
+					<h3>Vaihe 2</h3>
+					<p>Lisää mysql-cartridge OpenShift-sovellukseen komennolla:</p>
+					<code>rhc cartridge add mysql-5.5 -a irclokki</code>
+				</section>
+				<section style="text-align:left;">
+					<h3>Vaihe 3</h3>
+					<p>Luo OpenShift-palvelimelle MySQL-tietokanta. Jos käytössäsi on komentorivissä SSH:</p>
+					<p><code;>rhc ssh irclokki </br>
+						mysql </br>
+						DROP DATABASE if exists irclog; </br>
+						CREATE DATABASE irclog; </br>
+						USE irclog; </br>
+						CREATE TABLE log (</br>
+						id INT PRIMARY KEY AUTO_INCREMENT, </br>
+						timestampBIGINT, message TEXT); </br>
+					</code></p>
+					<p>Jos käytössäsi ei ole komentorivipohjaista SSH-clienttiä, yhdistä palvelimelle esim. Puttylla (<a href="https://developers.openshift.com/en/managing-remote-connection.html#download-the-putty-installer">ohjeet</a>)</p>
+				</section>
+				<section style="text-align:left;">
+					<h3>Vaihe 4</h3>
+					<p>Käynnistä sovellus komennolla:</p>
+					<code>rhc app-restart irclokki</code>
+				</section>
+				<section style="text-align:left;">
+					<h3>Lopuksi</h3>
+					<p>Sovellus on näkyvissä osoitteessa irclokki-(käyttäjänimi).rhcloud.com</p>
+					<p>Sovelluksen uudelleenkäynnistäminen ja pysäyttäminen:</p>
+					<code>rhc app-restart irclokki</br>
+					rhc app-stop irclokki</code>
+				</section>
+			</section>
 			</div>
 	</div>
 	<script src="lib/js/head.min.js"></script>
